@@ -1,600 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALARA | Sistema Integral</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALARA — Sistema de Integración Educativa</title>
 
-  <style>
-    :root {
-      --verde-salvia: #9FBDAA;
-      --verde-oscuro: #5F7D66;
-      --verde-agua: #BFD7D3;
-      --rosa: #F2D9D0;
-      --claro: #EAF2EE;
-      --fondo: #F6F1EC;
-      --texto: #26313D;
-      --gris: #6D746F;
-      --blanco: #FFFFFF;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F6F1EC;
+    color: #2E2E2E;
+    line-height: 1.6;
+}
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--fondo);
-      color: var(--texto);
-      line-height: 1.6;
-    }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
 
-    header {
-      background: rgba(246, 241, 236, 0.95);
-      border-bottom: 1px solid #ddd4cc;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
 
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header img {
+    height: 60px;
+}
 
-    .logo {
-      font-size: 34px;
-      letter-spacing: 6px;
-      color: var(--verde-oscuro);
-      font-weight: 500;
-    }
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
 
-    nav a {
-      margin-left: 28px;
-      text-decoration: none;
-      color: var(--texto);
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
 
-    .btn {
-      background: var(--verde-oscuro);
-      color: white !important;
-      padding: 12px 24px;
-      border-radius: 30px;
-      display: inline-block;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      border: none;
-    }
+.hero p {
+    max-width: 600px;
+    margin: 20px auto;
+}
 
-    .btn-outline {
-      border: 1px solid var(--verde-oscuro);
-      color: var(--verde-oscuro);
-      padding: 12px 24px;
-      border-radius: 30px;
-      display: inline-block;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      margin-left: 12px;
-    }
+button {
+    background-color: #9FBDAA;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1em;
+}
 
-    section {
-      padding: 70px 24px;
-    }
+section {
+    margin-bottom: 40px;
+}
 
-    .container {
-      max-width: 1180px;
-      margin: auto;
-    }
+h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-      min-height: 620px;
-      background: linear-gradient(135deg, #F6F1EC 0%, #EAF2EE 100%);
-    }
+.card {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
 
-    .hero h1 {
-      font-size: 56px;
-      line-height: 1.1;
-      margin-bottom: 18px;
-      color: var(--texto);
-    }
+.alara-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
 
-    .hero h2 {
-      font-family: Arial, sans-serif;
-      font-size: 20px;
-      color: var(--verde-oscuro);
-      margin-bottom: 24px;
-      font-weight: 600;
-    }
+.step {
+    background: #EAF2EE;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
 
-    .hero p {
-      font-size: 22px;
-      max-width: 620px;
-      margin-bottom: 30px;
-    }
-
-    .visual-card {
-      background: white;
-      border-radius: 36px;
-      padding: 40px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .circle {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: var(--claro);
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--verde-oscuro);
-      font-size: 28px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 25px;
-    }
-
-    .pillar {
-      background: var(--fondo);
-      padding: 16px;
-      border-radius: 20px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    h2.section-title {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      max-width: 760px;
-      font-size: 21px;
-      margin-bottom: 35px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .grid-5 {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .card h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
-      color: var(--verde-oscuro);
-    }
-
-    .card p, .card li {
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      color: var(--gris);
-    }
-
-    .quote {
-      background: var(--claro);
-      border-radius: 28px;
-      padding: 36px;
-      font-size: 24px;
-      color: var(--verde-oscuro);
-      font-style: italic;
-    }
-
-    .bar {
-      background: var(--claro);
-      color: var(--verde-oscuro);
-      text-align: center;
-      padding: 22px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      font-size: 19px;
-      border-radius: 40px;
-      margin-top: 30px;
-    }
-
-    .method-card {
-      text-align: center;
-      min-height: 210px;
-    }
-
-    .icon {
-      width: 62px;
-      height: 62px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      background: var(--verde-salvia);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 12px;
-    }
-
-    .steps {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .step {
-      background: var(--claro);
-      padding: 18px 24px;
-      border-radius: 30px;
-      color: var(--verde-oscuro);
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-    }
-
-    .footer-cta {
-      background: var(--verde-oscuro);
-      color: white;
-      text-align: center;
-      padding: 60px 24px;
-    }
-
-    .footer-cta h2 {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-
-    .footer-cta p {
-      font-size: 20px;
-      margin-bottom: 24px;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-      margin-top: 25px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 15px;
-      border-radius: 14px;
-      border: 1px solid #d8d0c8;
-      font-family: Arial, sans-serif;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    footer {
-      background: #26313D;
-      color: white;
-      text-align: center;
-      padding: 24px;
-      font-family: Arial, sans-serif;
-    }
-
-    @media (max-width: 900px) {
-      .hero,
-      .grid-2,
-      .grid-3,
-      .grid-5 {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero p {
-        font-size: 19px;
-      }
-
-      section {
-        padding: 52px 20px;
-      }
-    }
-  </style>
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="logo">ALARA</div>
-      <nav>
-        <a href="#sistema">Sistema</a>
-        <a href="#funciona">Cómo funciona</a>
-        <a href="#impacto">Impacto</a>
-        <a href="#piloto">Piloto</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn" href="#contacto">Implementar ALARA</a>
-      </nav>
+<header>
+    <img src="logo-alara.png" alt="ALARA Logo">
+</header>
+
+<section class="hero">
+    <h1>Un sistema educativo para integrar emoción, cuerpo y cognición</h1>
+    <p>ALARA propone una forma estructurada de desarrollar habilidades de autorregulación en coherencia con el desarrollo cerebral, aplicable en entornos educativos.</p>
+    <button>Solicitar implementación piloto</button>
+    <button>Conocer el sistema</button>
+</section>
+
+<div class="container">
+
+<section>
+    <h2>Cuando el aprendizaje no ocurre, no es falta de capacidad</h2>
+    <p>En muchos contextos educativos, las dificultades no están en el contenido, sino en la regulación del sistema nervioso.</p>
+    <p>Sin integración corporal y emocional, el acceso a lo cognitivo se ve limitado.</p>
+</section>
+
+<section>
+    <h2>Cómo aprende el cerebro</h2>
+    <p>El aprendizaje requiere condiciones de regulación.</p>
+    <p>Cuando el sistema nervioso percibe seguridad, se habilitan funciones cognitivas como la atención, la memoria y la toma de decisiones.</p>
+    <p>Cuando percibe amenaza, predomina la reacción.</p>
+</section>
+
+<section>
+    <h2>Sistema ALARA</h2>
+    <div class="alara-steps">
+        <div class="step">Atención</div>
+        <div class="step">Lenguaje</div>
+        <div class="step">Aceptación</div>
+        <div class="step">Regulación</div>
+        <div class="step">Acción</div>
     </div>
-  </header>
+    <p>Un proceso progresivo que puede ser enseñado.</p>
+</section>
 
-  <section class="hero">
-    <div class="container hero">
-      <div>
-        <h1>Sistema Integral ALARA</h1>
-        <h2>Desarrollo socioemocional y neurobiológico aplicado a la vida y al aprendizaje.</h2>
-        <p>
-          Cuando una persona aprende a regularse, amplía su capacidad de comprender,
-          vincularse y decidir con mayor claridad.
-        </p>
-        <p>
-          ALARA acompaña ese proceso integrando cuerpo, emoción y cognición.
-        </p>
-        <a class="btn" href="#sistema">Conocer el sistema</a>
-        <a class="btn-outline" href="#contacto">Solicitar piloto</a>
-      </div>
-
-      <div class="visual-card">
-        <h3>Cuerpo · Emoción · Cognición</h3>
-        <div class="circle">Regulación<br>Vínculo<br>Aprendizaje</div>
-        <div class="pillars">
-          <div class="pillar">Cuerpo<br><strong>Regulación</strong></div>
-          <div class="pillar">Emoción<br><strong>Vínculo</strong></div>
-          <div class="pillar">Cognición<br><strong>Aprendizaje</strong></div>
-        </div>
-      </div>
+<section>
+    <h2>Diseñado para entornos educativos</h2>
+    <div class="card">
+        <p>• Integración en aula</p>
+        <p>• Formación docente</p>
+        <p>• Programas por etapa evolutiva</p>
+        <p>• Intervención en contextos de conflicto</p>
+        <p>• Desarrollo de habilidades socioemocionales</p>
     </div>
-  </section>
+</section>
 
-  <section id="sistema">
-    <div class="container grid-2">
-      <div class="card">
-        <h2 class="section-title">Comprender para transformar</h2>
-        <p>
-          Detrás de cada emoción, reacción o dificultad, hay un estado interno que necesita
-          ser reconocido.
-        </p>
-        <br>
-        <p>
-          Cuando ese estado es acompañado con herramientas adecuadas, emergen nuevas formas
-          de aprender, vincularse y responder.
-        </p>
-        <div class="bar">ALARA trabaja fortaleciendo esas condiciones.</div>
-      </div>
+<section>
+    <h2>No es contenido. Es estructura.</h2>
+    <p>ALARA no agrega más carga al sistema educativo.</p>
+    <p>Proporciona una base sobre la cual el aprendizaje puede ocurrir.</p>
+</section>
 
-      <div class="card">
-        <h2 class="section-title">Un sistema, no una herramienta</h2>
-        <p>
-          ALARA es un sistema integral de desarrollo socioemocional que actúa sobre las
-          condiciones que hacen posible el aprendizaje y el bienestar.
-        </p>
-        <br>
-        <p>
-          No agrega carga ni reemplaza lo existente. Integra prácticas concretas que fortalecen
-          la regulación, el vínculo y la conciencia.
-        </p>
-        <div class="bar">Cuando el estado interno se organiza, el aprendizaje se vuelve posible.</div>
-      </div>
-    </div>
-  </section>
+<section>
+    <h2>Implementación piloto</h2>
+    <p>Las instituciones pueden comenzar con un programa piloto que permite observar la aplicabilidad del sistema en su propio contexto.</p>
+    <button>Solicitar piloto institucional</button>
+</section>
 
-  <section id="funciona" style="background:#ffffff;">
-    <div class="container">
-      <h2 class="section-title">Cómo se integra en la práctica</h2>
-      <p class="intro">
-        ALARA organiza el desarrollo en cinco ejes complementarios.
-      </p>
+<section>
+    <p><em>Integrar no es corregir. Es comprender cómo funciona el sistema humano.</em></p>
+</section>
 
-      <div class="grid-5">
-        <div class="card method-card">
-          <div class="icon">☀</div>
-          <h3>Ritual diario</h3>
-          <p>Pausas breves que preparan el sistema para aprender.</p>
-        </div>
+</div>
 
-        <div class="card method-card">
-          <div class="icon">🧩</div>
-          <h3>Gimnasio ejecutivo</h3>
-          <p>Prácticas que fortalecen atención, memoria y flexibilidad.</p>
-        </div>
-
-        <div class="card method-card">
-          <div class="icon">♡</div>
-          <h3>Alfabetización somática</h3>
-          <p>El cuerpo como base de la experiencia emocional.</p>
-        </div>
-
-        <div class="card method-card">
-          <div class="icon">☏</div>
-          <h3>Lenguaje colaborativo</h3>
-          <p>Comunicación que habilita comprensión y resolución.</p>
-        </div>
-
-        <div class="card method-card">
-          <div class="icon">👥</div>
-          <h3>Adulto regulador</h3>
-          <p>El entorno como base de seguridad y aprendizaje.</p>
-        </div>
-      </div>
-
-      <div class="bar">
-        Sin regulación hay menos disponibilidad para aprender. Cuando el sistema se equilibra, el aprendizaje se expande.
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container grid-3">
-      <div class="card">
-        <h2 class="section-title">Secuencia del desarrollo</h2>
-        <div class="steps">
-          <div class="step">Siento</div>
-          <div class="step">Nombro</div>
-          <div class="step">Regulo</div>
-          <div class="step">Integro</div>
-        </div>
-        <br>
-        <p>
-          El aprendizaje sigue un orden neurobiológico: primero el cuerpo se estabiliza,
-          luego la emoción se reconoce y, desde ahí, la mente puede comprender, resolver
-          y vincularse.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="section-title">ALARA en acción</h2>
-        <p>
-          En la práctica cotidiana, ALARA se integra a través de pausas, registro del estado
-          interno y herramientas de regulación.
-        </p>
-        <br>
-        <p>
-          Esto permite prepararse para aprender, sostener la atención y atravesar situaciones
-          desafiantes con mayor claridad.
-        </p>
-        <div class="bar">No es teoría. Es práctica diaria.</div>
-      </div>
-
-      <div class="card">
-        <h2 class="section-title">Ecosistema ALARA</h2>
-        <p>Un sistema que acompaña distintas etapas del desarrollo.</p>
-        <br>
-        <ul>
-          <li><strong>ALARA Calma</strong><br>Regulación, aula y vínculo.</li>
-          <li><strong>ARISA</strong><br>Narrativa, identidad y agencia.</li>
-          <li><strong>Calendario ALARA</strong><br>Presencia, reconocimiento y continuidad.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="impacto" style="background:#ffffff;">
-    <div class="container grid-2">
-      <div>
-        <h2 class="section-title">Impacto esperado</h2>
-        <p class="intro">
-          Acompañar el desarrollo interno transforma las trayectorias.
-        </p>
-      </div>
-
-      <div class="card">
-        <ul>
-          <li>✓ Mayor capacidad de atención y concentración</li>
-          <li>✓ Desarrollo de la regulación emocional</li>
-          <li>✓ Mejora en los vínculos</li>
-          <li>✓ Disminución de situaciones de conflicto</li>
-          <li>✓ Entornos más seguros y disponibles para aprender</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="piloto">
-    <div class="container grid-2">
-      <div class="card">
-        <h2 class="section-title">Implementación</h2>
-        <p>
-          ALARA puede integrarse a través de un piloto de 12 semanas que incluye
-          capacitación, aplicación práctica y seguimiento.
-        </p>
-
-        <div class="steps">
-          <div class="step">Capacitación</div>
-          <div class="step">Aplicación</div>
-          <div class="step">Monitoreo</div>
-          <div class="step">Evaluación</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="section-title">Base conceptual</h2>
-        <p>
-          ALARA integra aportes de la neurociencia del desarrollo, la teoría del apego,
-          la alfabetización emocional y el desarrollo de funciones ejecutivas.
-        </p>
-        <br>
-        <p>
-          Todo traducido en prácticas claras, accesibles y aplicables en contextos reales.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" style="background:#ffffff;">
-    <div class="container grid-2">
-      <div>
-        <h2 class="section-title">Implementar ALARA</h2>
-        <p class="intro">
-          Para instituciones y espacios que buscan generar condiciones de mayor regulación,
-          seguridad y aprendizaje.
-        </p>
-      </div>
-
-      <div class="card">
-        <form>
-          <input type="text" placeholder="Nombre completo" />
-          <input type="text" placeholder="Institución" />
-          <input type="email" placeholder="Correo electrónico" />
-          <textarea placeholder="Contanos cómo podemos acompañarlos..."></textarea>
-          <button class="btn" type="submit">Enviar consulta</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="footer-cta">
-    <h2>El desarrollo no se fuerza. Se acompaña.</h2>
-    <p>Cuando las condiciones cambian, las trayectorias también.</p>
-    <a class="btn-outline" style="background:white;" href="#contacto">Solicitar información</a>
-  </section>
-
-  <footer>
-    Sistema Integral ALARA · Argentina
-  </footer>
+<footer>
+    © ALARA — Sistema de Integración Educativa
+</footer>
 
 </body>
 </html>
