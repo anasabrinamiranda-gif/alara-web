@@ -3,59 +3,385 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALARA</title>
+<title>ALARA | Educación, neurobiología y conciencia</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F6F1EC;
-    color: #2E2E2E;
-    text-align: center;
+:root {
+  --salvia: #9FBDAA;
+  --agua: #BFD7D3;
+  --rosa: #F2D9D0;
+  --claro: #EAF2EE;
+  --fondo: #F6F1EC;
+  --texto: #26302D;
 }
 
-header {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #F2D9D0, #BFD7D3);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  background: rgba(246, 241, 236, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav strong {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: var(--texto);
+  font-size: 14px;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 8%;
+  background: linear-gradient(135deg, var(--rosa), var(--agua), var(--claro));
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 24px;
 }
 
 h1 {
-    font-size: 48px;
+  font-size: 64px;
+  margin: 10px 0;
+  letter-spacing: 4px;
 }
 
-.section {
-    padding: 60px 20px;
+.hero h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 20px auto;
+  max-width: 760px;
 }
 
-.button {
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 24px auto;
+}
+
+.buttons {
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 28px;
+  margin: 8px;
+  border-radius: 40px;
+  text-decoration: none;
+  background: var(--salvia);
+  color: white;
+  font-weight: bold;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--texto);
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.center {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.quote {
+  background: white;
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  font-size: 28px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 50px;
+}
+
+.card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.step {
+  background: var(--claro);
+  border-radius: 24px;
+  padding: 26px;
+  text-align: center;
+}
+
+.step span {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--salvia);
+}
+
+.lead {
+  background: linear-gradient(135deg, var(--agua), var(--rosa));
+  text-align: center;
+}
+
+footer {
+  background: var(--texto);
+  color: white;
+  padding: 50px 8%;
+  text-align: center;
+}
+
+footer p {
+  font-size: 15px;
+}
+
+@media (max-width: 850px) {
+  nav {
+    display: block;
+    text-align: center;
+  }
+
+  nav div {
+    margin-top: 12px;
+  }
+
+  nav a {
     display: inline-block;
-    margin: 10px;
-    padding: 14px 24px;
-    background-color: #9FBDAA;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+    margin: 8px;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .quote {
+    font-size: 22px;
+    padding: 32px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+  <strong>ALARA</strong>
+  <div>
+    <a href="#que-es">Qué es</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#escuelas">Escuelas</a>
+    <a href="#guia">Guía gratuita</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="logo.png" alt="Logo ALARA" class="logo">
     <h1>ALARA</h1>
-    <p>Una nueva manera de acompañar el aprendizaje y la conciencia.</p>
-    <a href="#" class="button">Conocer más</a>
+    <h2>Educación, neurobiología y conciencia para nuevas formas de aprender y vivir.</h2>
+    <p>
+      Una propuesta educativa y de desarrollo humano que acompaña a escuelas,
+      familias y adultos a comprender el cuerpo, la conducta, las emociones
+      y los vínculos desde una mirada más consciente.
+    </p>
+    <div class="buttons">
+      <a href="#que-es" class="btn">Conocer ALARA</a>
+      <a href="#guia" class="btn secondary">Descargar guía gratuita</a>
+    </div>
+  </div>
 </header>
 
-<div class="section">
-    <h2>El cuerpo guarda historia</h2>
-    <p>La educación puede ayudar a no repetirla.</p>
-</div>
+<section>
+  <div class="quote">
+    El cuerpo guarda historia.  
+    La educación puede ayudar a no repetirla inconscientemente.
+  </div>
+</section>
 
-<div class="section">
-    <h2>Qué es Alara</h2>
-    <p>Un enfoque educativo que integra conciencia, cuerpo y aprendizaje.</p>
-</div>
+<section id="que-es">
+  <div class="center">
+    <h2>Qué es ALARA</h2>
+    <p>
+      ALARA es un enfoque educativo y formativo que integra neurobiología,
+      conciencia corporal, habilidades socioemocionales y comunicación consciente.
+    </p>
+    <p>
+      No reemplaza espacios terapéuticos ni clínicos. Su campo es educativo,
+      preventivo y formativo: abrir conciencia, construir habilidades y acompañar
+      procesos de aprendizaje más humanos.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="center">
+    <h2>La mirada ALARA</h2>
+    <p>
+      Muchas conductas no son falta de voluntad. Son señales de habilidades
+      que todavía necesitan ser desarrolladas.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Neurobiología</h3>
+      <p>Comprender cómo el sistema nervioso influye en la atención, la conducta y el aprendizaje.</p>
+    </div>
+    <div class="card">
+      <h3>Conciencia corporal</h3>
+      <p>Reconocer que el cuerpo no es accesorio: también aprende, recuerda y comunica.</p>
+    </div>
+    <div class="card">
+      <h3>Comunicación consciente</h3>
+      <p>Usar el lenguaje como puente, no como amenaza. Sostener límites sin perder conexión.</p>
+    </div>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="center">
+    <h2>Metodología ALARA</h2>
+    <p>Un proceso simple, profundo y aplicable a la vida cotidiana.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step"><span>1</span>Observar</div>
+    <div class="step"><span>2</span>Regular</div>
+    <div class="step"><span>3</span>Comprender</div>
+    <div class="step"><span>4</span>Construir habilidad</div>
+    <div class="step"><span>5</span>Integrar</div>
+  </div>
+</section>
+
+<section id="escuelas">
+  <div class="center">
+    <h2>Para escuelas, familias y adultos</h2>
+    <p>
+      ALARA puede aplicarse en charlas, talleres, programas formativos,
+      espacios de crianza consciente, acompañamiento institucional y procesos
+      de evolución personal.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Escuelas</h3>
+      <p>Herramientas para docentes, equipos directivos y comunidades educativas.</p>
+    </div>
+    <div class="card">
+      <h3>Familias</h3>
+      <p>Recursos para acompañar emociones, límites, frustración y conducta.</p>
+    </div>
+    <div class="card">
+      <h3>Adultos</h3>
+      <p>Espacios para mirar patrones, comunicación, cuerpo y elección consciente.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="center">
+    <h2>ALARA e inteligencia artificial</h2>
+    <p>
+      En un mundo donde la inteligencia artificial transforma la educación,
+      ALARA desarrolla aquello profundamente humano: conciencia, presencia,
+      empatía, autorregulación, criterio y colaboración.
+    </p>
+  </div>
+</section>
+
+<section id="guia" class="lead">
+  <div class="center">
+    <h2>Guía gratuita</h2>
+    <p>
+      Descargá: <strong>5 preguntas para mirar una conducta difícil desde una nueva conciencia.</strong>
+    </p>
+    <p>
+      Una herramienta inicial para dejar de reaccionar automáticamente
+      y empezar a observar con más claridad.
+    </p>
+    <a href="#" class="btn">Descargar guía</a>
+  </div>
+</section>
+
+<footer>
+  <h3>ALARA</h3>
+  <p>Educación, neurobiología y conciencia para nuevas formas de aprender y vivir.</p>
+  <p>© ALARA</p>
+</footer>
 
 </body>
 </html>
