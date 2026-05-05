@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +16,7 @@ body {
     line-height: 1.6;
 }
 
-/* LOGO CENTRADO */
+/* LOGO */
 .logo-center {
     text-align: center;
     padding-top: 40px;
@@ -63,7 +61,7 @@ button {
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 h2 {
@@ -92,6 +90,19 @@ h2 {
     text-align: center;
 }
 
+/* FORMULARIO */
+form input, form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 10px;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -113,8 +124,9 @@ footer {
 <section class="hero">
     <h1>Un sistema educativo para integrar emoción, cuerpo y cognición</h1>
     <p>ALARA propone una forma estructurada de desarrollar habilidades de autorregulación en coherencia con el desarrollo cerebral, aplicable en entornos educativos.</p>
-    <button>Solicitar implementación piloto</button>
-    <button>Conocer el sistema</button>
+
+    <a href="#formulario"><button>Solicitar implementación piloto</button></a>
+    <a href="#sistema"><button>Conocer el sistema</button></a>
 </section>
 
 <div class="container">
@@ -132,8 +144,9 @@ footer {
     <p>Cuando percibe amenaza, predomina la reacción.</p>
 </section>
 
-<section>
+<section id="sistema">
     <h2>Sistema ALARA</h2>
+
     <div class="alara-steps">
         <div class="step">Atención</div>
         <div class="step">Lenguaje</div>
@@ -141,7 +154,12 @@ footer {
         <div class="step">Regulación</div>
         <div class="step">Acción</div>
     </div>
-    <p>Un proceso progresivo que puede ser enseñado.</p>
+
+    <p>ALARA es un sistema educativo que desarrolla la integración corporal, emocional y cognitiva de forma progresiva.</p>
+
+    <p>Se basa en que el aprendizaje ocurre cuando el sistema nervioso se encuentra regulado.</p>
+
+    <p>Enseña a identificar, ubicar y regular la experiencia en el cuerpo, en coherencia con el desarrollo cerebral en cada etapa.</p>
 </section>
 
 <section>
@@ -161,10 +179,18 @@ footer {
     <p>Proporciona una base sobre la cual el aprendizaje puede ocurrir.</p>
 </section>
 
-<section>
+<section id="formulario">
     <h2>Implementación piloto</h2>
-    <p>Las instituciones pueden comenzar con un programa piloto que permite observar la aplicabilidad del sistema en su propio contexto.</p>
-    <button>Solicitar piloto institucional</button>
+    <p>Completá los datos y nos pondremos en contacto para evaluar un piloto institucional.</p>
+
+    <form>
+        <input type="text" placeholder="Nombre de la institución" required><br><br>
+        <input type="text" placeholder="Nombre y cargo" required><br><br>
+        <input type="email" placeholder="Email institucional" required><br><br>
+        <input type="text" placeholder="Ciudad / País"><br><br>
+        <textarea placeholder="¿Qué situación desean abordar?" rows="4"></textarea><br><br>
+        <button type="submit">Enviar solicitud</button>
+    </form>
 </section>
 
 <section>
