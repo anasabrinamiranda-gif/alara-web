@@ -3,219 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ALARA — Sistema de Integración Educativa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #F6F1EC;
-    color: #2E2E2E;
-    line-height: 1.6;
+:root{
+--crema:#F6F1EC;
+--verde:#7A9E87;
+--verde-oscuro:#4A6B54;
+--texto:#2A2A2A;
+--suave:#6B6B6B;
+--linea:rgba(74,107,84,.15);
 }
 
-/* LOGO */
-.logo-center {
-    text-align: center;
-    padding-top: 40px;
+body{
+margin:0;
+font-family:'DM Sans',sans-serif;
+background:var(--crema);
+color:var(--texto);
 }
 
-.logo-center img {
-    height: 120px;
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(246,241,236,.9);
+display:flex;
+justify-content:space-between;
+padding:18px 40px;
+border-bottom:1px solid var(--linea);
+}
+
+nav a{
+text-decoration:none;
+color:var(--suave);
+font-size:12px;
+letter-spacing:1px;
 }
 
 /* HERO */
-.hero {
-    text-align: center;
-    padding: 30px 20px 80px;
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:120px 40px;
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    font-weight: 600;
-    letter-spacing: 2px;
+.hero-logo{
+text-align:center;
+margin-bottom:20px;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 20px auto;
+.hero-logo svg{
+width:140px;
 }
 
-/* BOTONES */
-button {
-    background-color: #9FBDAA;
-    border: none;
-    padding: 12px 24px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 1em;
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:80px;
+letter-spacing:6px;
+text-align:center;
+margin:0;
+color:var(--verde-oscuro);
 }
 
-/* CONTENIDO */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
+.sub{
+text-align:center;
+font-size:20px;
+color:var(--suave);
+margin:20px 0 40px;
 }
 
-section {
-    margin-bottom: 60px;
+.btn{
+display:inline-block;
+padding:14px 28px;
+border:1px solid var(--verde-oscuro);
+text-decoration:none;
+font-size:12px;
+letter-spacing:1px;
+margin:5px;
 }
 
-h2 {
-    font-weight: 600;
+.btn.primary{
+background:var(--verde-oscuro);
+color:white;
 }
 
-/* TARJETAS */
-.card {
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
+/* SECCIONES */
+section{
+padding:90px 40px;
+border-top:1px solid var(--linea);
+max-width:1000px;
+margin:auto;
 }
 
-/* PASOS */
-.alara-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+h2{
+font-family:'Cormorant Garamond',serif;
+font-size:32px;
+color:var(--verde-oscuro);
 }
 
-.step {
-    background: #EAF2EE;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
+p{
+color:var(--suave);
+line-height:1.7;
 }
 
-/* FORMULARIO */
-form input, form textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+/* IMPLEMENTACION */
+.pasos{
+margin-top:40px;
 }
 
-form button {
-    margin-top: 10px;
+.paso{
+margin-bottom:25px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 0.9em;
-    color: #777;
+/* FORM */
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid var(--linea);
+}
+
+button{
+margin-top:20px;
+padding:14px;
+background:var(--verde-oscuro);
+color:white;
+border:none;
+width:100%;
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:12px;
+color:var(--suave);
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO (único) -->
-<header class="logo-center">
-    <img src="logo.png" alt="ALARA Logo">
-</header>
+<nav>
+<a href="#">ALARA</a>
+<div>
+<a href="#sistema">Sistema</a>
+<a href="#implementacion">Implementación</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>ALARA</h1>
-    <p><strong>Un sistema educativo para integrar emoción, cuerpo y cognición</strong></p>
 
-    <p>ALARA propone una forma estructurada de desarrollar habilidades de autorregulación en coherencia con el desarrollo cerebral, aplicable en entornos educativos.</p>
+<div class="hero-logo">
+<svg viewBox="0 0 80 80">
+<circle cx="40" cy="40" r="30" stroke="#7A9E87" stroke-width="2" fill="none"/>
+</svg>
+</div>
 
-    <a href="#formulario"><button>Solicitar implementación piloto</button></a>
-    <a href="#sistema"><button>Conocer el sistema</button></a>
+<h1>ALARA</h1>
+
+<p class="sub">
+Cuando el sistema nervioso está en equilibrio,<br>
+el aprendizaje sucede.
+</p>
+
+<div style="text-align:center;">
+<a href="#contacto" class="btn primary">Iniciar piloto</a>
+<a href="#sistema" class="btn">Conocer sistema</a>
+</div>
+
 </section>
 
-<div class="container">
-
-<section>
-    <h2>Cuando el aprendizaje no ocurre, no es falta de capacidad</h2>
-    <p>En muchos contextos educativos, las dificultades no están en el contenido, sino en la regulación del sistema nervioso.</p>
-    <p>Sin integración corporal y emocional, el acceso a lo cognitivo se ve limitado.</p>
-</section>
-
-<section>
-    <h2>Cómo aprende el cerebro</h2>
-    <p>El aprendizaje requiere condiciones de regulación.</p>
-    <p>Cuando el sistema nervioso percibe seguridad, se habilitan funciones cognitivas como la atención, la memoria y la toma de decisiones.</p>
-    <p>Cuando percibe amenaza, predomina la reacción.</p>
-</section>
-
+<!-- SISTEMA -->
 <section id="sistema">
-    <h2>Sistema ALARA</h2>
 
-    <div class="alara-steps">
-        <div class="step">Atención</div>
-        <div class="step">Lenguaje</div>
-        <div class="step">Aceptación</div>
-        <div class="step">Regulación</div>
-        <div class="step">Acción</div>
-    </div>
+<h2>Un sistema que acompaña el aprendizaje</h2>
 
-    <p>ALARA es un sistema educativo que desarrolla la integración corporal, emocional y cognitiva de forma progresiva.</p>
+<p>
+ALARA no corrige conductas. 
+Organiza condiciones para que el aprendizaje pueda ocurrir de manera natural.
+</p>
 
-    <p>Se basa en que el aprendizaje ocurre cuando el sistema nervioso se encuentra regulado.</p>
+<p>
+Integra cuerpo, emoción y cognición en un proceso simple, aplicable y replicable.
+</p>
 
-    <p>Enseña a identificar, ubicar y regular la experiencia en el cuerpo, en coherencia con el desarrollo cerebral en cada etapa.</p>
 </section>
 
-<section>
-    <h2>Diseñado para entornos educativos</h2>
-    <div class="card">
-        <p>• Integración en aula</p>
-        <p>• Formación docente</p>
-        <p>• Programas por etapa evolutiva</p>
-        <p>• Intervención en contextos de conflicto</p>
-        <p>• Desarrollo de habilidades socioemocionales</p>
-    </div>
-</section>
+<!-- IMPLEMENTACION -->
+<section id="implementacion">
 
-<section>
-    <h2>No es contenido. Es estructura.</h2>
-    <p>ALARA no agrega más carga al sistema educativo.</p>
-    <p>Proporciona una base sobre la cual el aprendizaje puede ocurrir.</p>
-</section>
+<h2>Implementación en instituciones</h2>
 
-<!-- FORMULARIO -->
-<section id="formulario">
-    <h2>Implementación piloto</h2>
-    <p>Completá los datos y nos pondremos en contacto para evaluar un piloto institucional.</p>
+<p>
+El proceso es gradual, claro y adaptado a cada contexto educativo.
+</p>
 
-    <form>
-        <input type="text" placeholder="Nombre de la institución" required><br><br>
-        <input type="text" placeholder="Nombre y cargo" required><br><br>
-        <input type="email" placeholder="Email institucional" required><br><br>
-        <input type="text" placeholder="Ciudad / País"><br><br>
-        <textarea placeholder="¿Qué situación desean abordar?" rows="4"></textarea><br><br>
-        <button type="submit">Enviar solicitud</button>
-    </form>
-</section>
+<div class="pasos">
 
-<!-- CONTACTO -->
-<section>
-    <h2>Contacto</h2>
-    <p>
-        <a href="mailto:info@alaraeducacion.com">
-            info@alaraeducacion.com
-        </a>
-    </p>
-</section>
+<div class="paso">
+<strong>1. Diagnóstico del contexto</strong>
+<p>Comprender dinámicas, desafíos y necesidades de la institución.</p>
+</div>
 
-<section>
-    <p><em>Integrar no es corregir. Es comprender cómo funciona el sistema humano.</em></p>
-</section>
+<div class="paso">
+<strong>2. Formación del equipo</strong>
+<p>Capacitación en regulación del sistema nervioso y mirada ALARA.</p>
+</div>
+
+<div class="paso">
+<strong>3. Integración en aula</strong>
+<p>Prácticas simples dentro de la rutina escolar.</p>
+</div>
+
+<div class="paso">
+<strong>4. Seguimiento</strong>
+<p>Acompañamiento para sostener el cambio en el tiempo.</p>
+</div>
 
 </div>
 
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+
+<h2>Iniciar contacto</h2>
+
+<p>
+Podés escribir directamente o completar el formulario.
+</p>
+
+<p><strong>info@alaraeducacion.com</strong></p>
+
+<form>
+<input placeholder="Institución">
+<input placeholder="Nombre">
+<input placeholder="Email">
+<textarea placeholder="Mensaje"></textarea>
+<button>Enviar</button>
+</form>
+
+</section>
+
 <footer>
-    © ALARA — Sistema de Integración Educativa
+ALARA — Sistema de Integración Educativa
 </footer>
 
 </body>
