@@ -16,29 +16,65 @@ body {
     line-height: 1.6;
 }
 
-/* LOGO */
-.logo-center {
+/* MARCA ARRIBA */
+.brand-center {
     text-align: center;
     padding-top: 40px;
 }
 
-.logo-center img {
-    height: 120px;
+.brand-symbol {
+    height: 115px;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.brand-name {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 7px;
+    color: #7FA895;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #6F6F6F;
+    margin-top: 6px;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 40px 20px 80px;
+    padding: 45px 20px 80px;
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    font-weight: 600;
+.hero-title {
+    font-size: 44px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #2E2E2E;
+    margin-bottom: 10px;
+}
+
+.logo-inline {
+    height: 56px;
+}
+
+.hero-sub {
+    font-size: 24px;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto 24px;
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 650px;
     margin: 20px auto;
 }
 
@@ -51,6 +87,10 @@ button {
     cursor: pointer;
     border-radius: 8px;
     font-size: 1em;
+}
+
+button:hover {
+    background-color: #8DAE9B;
 }
 
 /* CONTENIDO */
@@ -97,6 +137,7 @@ form input, form textarea {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    font-family: 'Inter', sans-serif;
 }
 
 form button {
@@ -110,19 +151,49 @@ footer {
     font-size: 0.9em;
     color: #777;
 }
+
+@media (max-width: 700px) {
+    .brand-symbol {
+        height: 90px;
+    }
+
+    .brand-name {
+        font-size: 32px;
+        letter-spacing: 5px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+        letter-spacing: 4px;
+    }
+
+    .logo-inline {
+        height: 42px;
+    }
+
+    .hero-sub {
+        font-size: 20px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
-<header class="logo-center">
-    <img src="logo.png" alt="ALARA Logo">
+<header class="brand-center">
+    <img src="logo.png" alt="ALARA Logo" class="brand-symbol">
+    <div class="brand-name">ALARA</div>
+    <div class="brand-subtitle">Sistema de Integración Educativa</div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>Un sistema educativo para integrar emoción, cuerpo y cognición</h1>
+    <h1 class="hero-title">
+        <img src="logo.png" class="logo-inline" alt="Logo ALARA">
+        ALARA
+    </h1>
+
+    <p class="hero-sub">Un sistema educativo para integrar emoción, cuerpo y cognición</p>
+
     <p>ALARA propone una forma estructurada de desarrollar habilidades de autorregulación en coherencia con el desarrollo cerebral, aplicable en entornos educativos.</p>
 
     <a href="#formulario"><button>Solicitar implementación piloto</button></a>
@@ -156,9 +227,7 @@ footer {
     </div>
 
     <p>ALARA es un sistema educativo que desarrolla la integración corporal, emocional y cognitiva de forma progresiva.</p>
-
     <p>Se basa en que el aprendizaje ocurre cuando el sistema nervioso se encuentra regulado.</p>
-
     <p>Enseña a identificar, ubicar y regular la experiencia en el cuerpo, en coherencia con el desarrollo cerebral en cada etapa.</p>
 </section>
 
@@ -200,7 +269,7 @@ footer {
 </div>
 
 <footer>
-    © ALARA — Sistema de Integración Educativa
+    © ALARA — Sistema de Integración Educativa · info@alaraeducacion.com
 </footer>
 
 </body>
