@@ -1,1 +1,84 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rueda emocional — ALARA</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #F6F1EC;
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.rueda {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 50%;
+  border: 6px solid #9FBDAA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numero {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #9FBDAA;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Rueda emocional ALARA</h1>
+
+<div class="rueda">
+  <div id="resultado" class="numero">?</div>
+</div>
+
+<button onclick="girar()">Girar</button>
+
+<p id="mensaje"></p>
+
+<script>
+function girar() {
+  const numero = Math.floor(Math.random() * 8) + 1;
+  document.getElementById("resultado").innerText = numero;
+
+  let mensaje = "";
+
+  switch(numero) {
+    case 1: mensaje = "¿Qué estoy sintiendo ahora?"; break;
+    case 2: mensaje = "¿Dónde lo siento en el cuerpo?"; break;
+    case 3: mensaje = "¿Cómo puedo nombrar esta emoción?"; break;
+    case 4: mensaje = "¿Puedo validar lo que siento sin juzgar?"; break;
+    case 5: mensaje = "¿Qué me ayudaría a regularme?"; break;
+    case 6: mensaje = "Respirá lento 5 veces."; break;
+    case 7: mensaje = "¿Qué necesito ahora?"; break;
+    case 8: mensaje = "Elegí una acción consciente."; break;
+  }
+
+  document.getElementById("mensaje").innerText = mensaje;
+}
+</script>
+
+</body>
+</html>
