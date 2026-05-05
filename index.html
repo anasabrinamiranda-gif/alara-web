@@ -18,19 +18,20 @@ body {
     line-height: 1.6;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
+/* LOGO CENTRADO */
+.logo-center {
+    text-align: center;
+    padding-top: 40px;
 }
 
-header img {
-    height: 60px;
+.logo-center img {
+    height: 120px;
 }
 
+/* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 40px 20px 80px;
 }
 
 .hero h1 {
@@ -43,6 +44,7 @@ header img {
     margin: 20px auto;
 }
 
+/* BOTONES */
 button {
     background-color: #9FBDAA;
     border: none;
@@ -53,6 +55,7 @@ button {
     font-size: 1em;
 }
 
+/* CONTENIDO */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -74,6 +77,7 @@ h2 {
     margin-top: 20px;
 }
 
+/* PASOS ALARA */
 .alara-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -88,6 +92,7 @@ h2 {
     text-align: center;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -99,10 +104,12 @@ footer {
 
 <body>
 
-<header>
+<!-- LOGO -->
+<header class="logo-center">
     <img src="logo.png" alt="ALARA Logo">
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Un sistema educativo para integrar emoción, cuerpo y cognición</h1>
     <p>ALARA propone una forma estructurada de desarrollar habilidades de autorregulación en coherencia con el desarrollo cerebral, aplicable en entornos educativos.</p>
