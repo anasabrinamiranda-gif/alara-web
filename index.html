@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,83 +6,279 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALARA — Sistema de Integración Educativa</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
---fondo:#F6F1EC;
---verde:#9FBDAA;
---verde-profundo:#2E4535;
---texto:#2E2E2E;
---suave:#6B6B6B;
---blanco:#fff;
---linea:rgba(0,0,0,0.08);
+  --verde:#9FBDAA;
+  --agua:#BFD7D3;
+  --rosa:#F2D9D0;
+  --claro:#EAF2EE;
+  --fondo:#F6F1EC;
+  --texto:#283230;
+  --suave:#607370;
+  --blanco:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--fondo);color:var(--texto);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.7;
+}
 
 nav{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 40px;background:#ffffffdd;backdrop-filter:blur(10px);
-border-bottom:1px solid var(--linea);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 6vw;
+  background:rgba(246,241,236,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(159,189,170,.25);
 }
 
-.nav-logo{font-family:'Cormorant Garamond';font-size:1.4em;letter-spacing:4px;color:var(--verde-profundo);text-decoration:none;}
-.nav-links a{margin-left:20px;text-decoration:none;color:var(--suave);font-size:.8em;}
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--texto);
+}
+
+.nav-brand img{
+  width:34px;
+}
+
+.nav-brand span{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  letter-spacing:.18em;
+}
+
+.nav-links a{
+  margin-left:24px;
+  text-decoration:none;
+  color:var(--suave);
+  text-transform:uppercase;
+  font-size:.72rem;
+  letter-spacing:.12em;
+}
 
 .hero{
-min-height:100vh;text-align:center;
-display:flex;flex-direction:column;justify-content:center;padding:120px 20px 60px;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  padding:130px 7vw 80px;
+  background:
+    radial-gradient(circle at 85% 25%, var(--agua), transparent 35%),
+    radial-gradient(circle at 10% 90%, var(--rosa), transparent 32%),
+    var(--fondo);
 }
 
-.hero img{width:140px;margin:auto;margin-bottom:20px;}
-
-.hero h1{
-font-family:'Cormorant Garamond';
-font-size:clamp(3em,7vw,6em);
-letter-spacing:6px;color:var(--verde-profundo);
+.hero-texto h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,6vw,5rem);
+  font-weight:300;
+  line-height:1.05;
 }
 
-.hero p{max-width:600px;margin:15px auto;color:var(--suave);}
+.hero-texto h1 em{
+  color:var(--verde);
+}
+
+.hero-texto p{
+  max-width:520px;
+  margin:24px 0;
+  color:var(--suave);
+}
+
+.hero-logo{
+  text-align:center;
+}
+
+.hero-logo .circle{
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  background:var(--blanco);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  box-shadow:0 20px 60px rgba(159,189,170,.25);
+}
+
+.hero-logo img{
+  width:65%;
+}
 
 .btn{
-display:inline-block;margin:10px;
-padding:12px 25px;
-background:var(--verde-profundo);
-color:#fff;text-decoration:none;border-radius:5px;
+  display:inline-block;
+  padding:13px 28px;
+  border-radius:100px;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.75rem;
+  background:var(--texto);
+  color:var(--fondo);
+  margin-right:12px;
+  margin-top:10px;
 }
 
-.container{max-width:1000px;margin:auto;padding:40px 20px;}
+.btn-sec{
+  background:transparent;
+  color:var(--texto);
+  border:1px solid var(--texto);
+}
 
-section{margin:80px 0;}
+section{
+  padding:90px 7vw;
+}
+
+.label{
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--verde);
+  font-size:.72rem;
+  font-weight:600;
+  margin-bottom:14px;
+}
 
 h2{
-font-family:'Cormorant Garamond';
-font-size:2.5em;margin-bottom:10px;color:var(--verde-profundo);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:300;
+  line-height:1.2;
+  margin-bottom:22px;
 }
 
-.grid{display:grid;gap:15px;margin-top:20px;}
+.texto{
+  max-width:720px;
+  color:var(--suave);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:36px;
+}
+
 .card{
-background:#fff;padding:20px;border-radius:10px;border:1px solid var(--linea);
+  background:var(--blanco);
+  padding:28px;
+  border-radius:22px;
+  border:1px solid rgba(159,189,170,.25);
+  box-shadow:0 10px 30px rgba(0,0,0,.03);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:var(--texto);
 }
 
 .quote{
-background:var(--verde-profundo);
-color:#fff;padding:50px;text-align:center;border-radius:10px;
+  background:var(--texto);
+  color:var(--fondo);
+  text-align:center;
 }
 
-.quote p{font-family:'Cormorant Garamond';font-size:1.6em;}
+.quote p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3vw,2.5rem);
+  font-style:italic;
+  max-width:850px;
+  margin:auto;
+}
 
-img.calma{
-width:100%;max-width:450px;display:block;margin:30px auto;border-radius:12px;
+.quote span{
+  display:block;
+  margin-top:20px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.7rem;
+  opacity:.75;
+}
+
+.calma{
+  background:var(--claro);
+}
+
+.calma-img{
+  width:100%;
+  max-width:520px;
+  display:block;
+  margin:36px auto;
+  border-radius:26px;
+  box-shadow:0 18px 45px rgba(159,189,170,.22);
+}
+
+.formulario{
+  background:var(--rosa);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+input, textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  border:1px solid rgba(40,50,48,.18);
+  border-radius:12px;
+  font-family:'Jost',sans-serif;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  background:var(--texto);
+  color:var(--fondo);
+  border:none;
+  border-radius:100px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
 }
 
 footer{
-text-align:center;padding:40px;font-size:.8em;color:var(--suave);
-border-top:1px solid var(--linea);
+  background:var(--texto);
+  color:var(--fondo);
+  text-align:center;
+  padding:34px 20px;
+  font-size:.8rem;
+}
+
+@media(max-width:800px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-texto p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -89,93 +286,130 @@ border-top:1px solid var(--linea);
 <body>
 
 <nav>
-<a class="nav-logo">ALARA</a>
-<div class="nav-links">
-<a href="#metodo">Método</a>
-<a href="#bosque">Bosque</a>
-<a href="#calma">ALARA Calma</a>
-<a href="#recursos">Recursos</a>
-<a href="#contacto">Contacto</a>
-</div>
+  <a href="#" class="nav-brand">
+    <img src="logo.png" alt="Logo ALARA">
+    <span>ALARA</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="#metodo">Método</a>
+    <a href="#bosque">Bosque</a>
+    <a href="#calma">Calma</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
 </nav>
 
-<div class="hero">
-<img src="logo.png">
-<h1>ALARA</h1>
-<p>Sistema de Integración Educativa</p>
-<p>Cuando el sistema nervioso se regula, el aprendizaje puede ocurrir.</p>
-<a href="#calma" class="btn">Conocer ALARA Calma</a>
-</div>
+<header class="hero">
+  <div class="hero-texto">
+    <p class="label">Sistema de Integración Educativa</p>
+    <h1>Integrar emoción, cuerpo y cognición <em>para aprender mejor</em></h1>
+    <p>ALARA desarrolla la conciencia emocional desde el cuerpo, enseñando a identificar, ubicar y regular la experiencia interna en coherencia con el desarrollo cerebral.</p>
+    <a href="#calma" class="btn">Conocer ALARA Calma</a>
+    <a href="#contacto" class="btn btn-sec">Solicitar piloto</a>
+  </div>
 
-<div class="container">
+  <div class="hero-logo">
+    <div class="circle">
+      <img src="logo.png" alt="Logo ALARA">
+    </div>
+  </div>
+</header>
 
 <section>
-<h2>Cuando el aprendizaje no ocurre</h2>
-<p>No siempre es falta de capacidad. Muchas veces es falta de regulación del sistema nervioso.</p>
+  <p class="label">El punto de partida</p>
+  <h2>Cuando el aprendizaje no ocurre, no siempre es falta de capacidad</h2>
+  <p class="texto">En muchos contextos educativos, las dificultades no están en el contenido, sino en la regulación del sistema nervioso. Cuando el cuerpo percibe seguridad, la atención, la memoria y la toma de decisiones se vuelven más accesibles.</p>
 </section>
 
 <section class="quote">
-<p>“Entre el estímulo y la respuesta hay un espacio. En ese espacio reside nuestra libertad.”</p>
+  <p>“Entre el estímulo y la respuesta hay un espacio. En ese espacio reside nuestra libertad y nuestro poder para elegir nuestra respuesta.”</p>
+  <span>Viktor Frankl</span>
 </section>
 
 <section id="metodo">
-<h2>Método ALARA</h2>
-<div class="grid">
-<div class="card">A — Atención</div>
-<div class="card">L — Lenguaje</div>
-<div class="card">A — Aceptación</div>
-<div class="card">R — Regulación</div>
-<div class="card">A — Acción</div>
-</div>
+  <p class="label">Método ALARA</p>
+  <h2>Cinco dimensiones del desarrollo integrado</h2>
+  <p class="texto">Un proceso pedagógico para pasar de la reacción automática a la respuesta consciente.</p>
+
+  <div class="grid">
+    <div class="card"><h3>A — Atención</h3><p>Reconocer lo que siento.</p></div>
+    <div class="card"><h3>L — Lenguaje</h3><p>Nombrar la emoción.</p></div>
+    <div class="card"><h3>A — Aceptación</h3><p>Validar sin juicio.</p></div>
+    <div class="card"><h3>R — Regulación</h3><p>Volver al equilibrio.</p></div>
+    <div class="card"><h3>A — Acción</h3><p>Elegir cómo actuar.</p></div>
+  </div>
 </section>
 
 <section id="bosque">
-<h2>Bosque ALARA</h2>
-<div class="grid">
-<div class="card">🌿 Calma</div>
-<div class="card">🌸 Emoción</div>
-<div class="card">🍃 Reflexión</div>
-<div class="card">🤝 Empatía</div>
-<div class="card">🌞 Gratitud</div>
-</div>
+  <p class="label">Modelo pedagógico</p>
+  <h2>Bosque ALARA</h2>
+  <p class="texto">El aprendizaje se presenta como un recorrido simbólico: calma, emoción, reflexión, empatía y gratitud.</p>
+
+  <div class="grid">
+    <div class="card"><h3>🌿 Bosque de la calma</h3><p>Respiración y pausa.</p></div>
+    <div class="card"><h3>🌸 Bosque de las emociones</h3><p>Identificar y nombrar.</p></div>
+    <div class="card"><h3>🍃 Bosque de la reflexión</h3><p>Pensar y comprender.</p></div>
+    <div class="card"><h3>🤝 Bosque de la empatía</h3><p>Reconocer al otro.</p></div>
+    <div class="card"><h3>🌞 Bosque del agradecimiento</h3><p>Construir bienestar.</p></div>
+  </div>
 </section>
 
-<section id="calma">
-<h2>ALARA CALMA — Kit de inicio</h2>
-<p>Puerta de entrada al sistema ALARA. Enseña pausa, regulación y conciencia emocional.</p>
+<section id="calma" class="calma">
+  <p class="label">Kit de inicio</p>
+  <h2>ALARA CALMA</h2>
+  <p class="texto">La puerta de entrada al sistema ALARA. Un kit inicial para enseñar pausa, regulación y conciencia emocional desde el cuerpo.</p>
 
-<img src="alara-calma.jpg" class="calma">
+  <img src="alara-calma.jpg" alt="ALARA Calma Kit de inicio" class="calma-img">
 
-<div class="grid">
-<div class="card">Rueda emocional</div>
-<div class="card">Refugio de calma</div>
-<div class="card">Respiración</div>
-<div class="card">Acción consciente</div>
-</div>
+  <div class="grid">
+    <div class="card"><h3>Rueda emocional</h3><p>Para identificar estados internos sin juicio.</p></div>
+    <div class="card"><h3>Refugio de calma</h3><p>Para detenerse, respirar y reconectar.</p></div>
+    <div class="card"><h3>Respiración guiada</h3><p>Para regular el sistema nervioso.</p></div>
+    <div class="card"><h3>Acción consciente</h3><p>Para elegir después de regularse.</p></div>
+  </div>
 
-<p><strong>Pausar también es avanzar.</strong></p>
+  <p class="texto" style="margin-top:28px;"><strong>Pausar también es avanzar.</strong></p>
 </section>
 
 <section id="recursos">
-<h2>Recursos pedagógicos</h2>
+  <p class="label">Recursos pedagógicos</p>
+  <h2>Herramientas aplicables</h2>
+  <p class="texto">Recursos simples, visuales y corporales para acompañar procesos de regulación en contextos educativos.</p>
 
-<div class="card">
-<h3>Rueda emocional ALARA</h3>
-<p>Herramienta para iniciar el proceso de regulación.</p>
-<a href="rueda.html" class="btn">Abrir herramienta</a>
-</div>
-
+  <div class="grid">
+    <div class="card">
+      <h3>Rueda emocional ALARA</h3>
+      <p>Herramienta para iniciar el recorrido emocional desde el juego, el cuerpo y la palabra.</p>
+      <br>
+      <a href="rueda.html" class="btn">Abrir herramienta</a>
+    </div>
+  </div>
 </section>
 
-<section id="contacto">
-<h2>Contacto</h2>
-<p>info@alaraeducacion.com</p>
-</section>
+<section id="contacto" class="formulario">
+  <div class="form-grid">
+    <div>
+      <p class="label">Implementación institucional</p>
+      <h2>Iniciemos un piloto</h2>
+      <p class="texto">Trabajamos con instituciones educativas para diseñar pilotos adaptados a cada contexto.</p>
+      <br>
+      <p>Contacto: <a href="mailto:info@alaraeducacion.com">info@alaraeducacion.com</a></p>
+    </div>
 
-</div>
+    <form>
+      <input type="text" placeholder="Nombre de la institución" required>
+      <input type="text" placeholder="Nombre y cargo" required>
+      <input type="email" placeholder="Email institucional" required>
+      <input type="text" placeholder="Ciudad / País">
+      <textarea rows="5" placeholder="¿Qué situación desean abordar?"></textarea>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
 
 <footer>
-© ALARA — Sistema de Integración Educativa
+  © 2026 ALARA — Sistema de Integración Educativa · info@alaraeducacion.com
 </footer>
 
 </body>
